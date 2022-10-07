@@ -25,3 +25,189 @@
 ## Models
 
 ![Model-Relations](images/ModelsRelation.png)
+
+## Endpunkte
+
+### GET /questions
+
+liefert uns eine `Liste` aller Questions zurück
+
+Response:
+
+```javascript
+[
+  {
+    title: "Was kann PreventDefault() tun ?",
+    description: "....",
+    category: "JS",
+    user: {
+      email: "user1@mail.de",
+      name: "Hans Müler",
+    },
+    answers: [
+      {
+        description: "........",
+      },
+    ],
+  },
+  {
+    title: "Was kann XY tun  ?",
+    description: "....",
+    category: "HTML",
+    user: {
+      email: "user2@mail.de",
+      name: "Schiri Schnee",
+    },
+    answers: [
+      {
+        description: "........",
+      },
+    ],
+  },
+];
+```
+
+### GET /qustions/[:id]
+
+liefert uns eine `einzelne` Qstion zurück.
+
+Response:
+
+```javascript
+  {
+    title: "Was kann PreventDefault() tun ?",
+    description: "....",
+    category: "JS",
+    user: {
+      email: "user1@mail.de",
+      name: "Hans Müler",
+    },
+    answers: [
+      {
+        description: "........",
+      },
+    ],
+  }
+```
+
+### POST /questions
+
+erstellt eine neue Question.
+
+Request:
+
+```javascript
+  {
+    title:"Was kann PreventDefault() tun ?",
+    description: "....",
+    category: "JS",
+    user: "skjdlkejkceikjxsödke",
+  }
+```
+
+Response:
+
+```javascript
+  {
+    _id:"mksjdsd1233"
+    title:"Was kann PreventDefault() tun ?",
+    description: "....",
+    category: "JS",
+    user: "skjdlkejkceikjxsödke",
+  }
+```
+
+### POST /answers
+
+erstellt eine Antwort für eine Question
+
+Request:
+
+```javascript
+  {
+    question: "mksjdsd1233",
+    user: "skjdlkejkceikjxsödke",
+    description: "............",
+  }
+```
+
+Response:
+
+```javascript
+{
+  _id: "244435fwwkjasw",
+  question: "mksjdsd1233",
+  user: "skjdlkejkceikjxsödke",
+  description: "............",
+}
+```
+
+### POST /user/login
+
+logged den User ein.
+
+Request:
+
+```javascript
+  {
+    email: "user1@mail.de",
+    password: "123456",
+  }
+```
+
+Response:
+
+```javascript
+{
+  _id: "244435fwwkjasw",
+  email: "user1@mail.de",
+  name: "Hans Müler",
+  answers: []
+  questions: [
+    "mksjdsd1233"
+  ]
+}
+```
+
+### POST /user/register
+
+erstellt einen neuen User und loggt ihn ein.
+
+Request:
+
+```javascript
+  {
+    name: "Hans Müler",
+    email: "user1@mail.de",
+    password: "123456",
+  }
+```
+
+Response:
+
+```javascript
+{
+  _id: "244435fwwkjasw",
+  email: "user1@mail.de",
+  name: "Hans Müler",
+  answers: []
+  questions: []
+}
+```
+
+### POST /user/logout
+
+der usertoken cookie wird gelöscht, der token wid aud der Datenbank entfernt
+
+Request:
+
+```javascript
+{
+}
+```
+
+Response:
+
+```javascript
+true;
+```
