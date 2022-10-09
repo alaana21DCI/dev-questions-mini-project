@@ -16,9 +16,6 @@
 
 ### Optional Features - 2
 
-- **Pagination**: Die Liste der Fragen ist auf 5 Fragen begrenzt. Es gibt einen Button welcher die nächsten 5 Fragen nachladen kann
-- **User-Question-List**: Der User kann im Account-Bereich eine Liste seiner eigenen Fragen sehen
-- **User-Answer-List**: Der User kann im Account-Bereich eine Liste seiner Antworten (zu Fragen) sehen
 - **Avatar**: Der User kann beim Erstellen des Accounts einen Avatar hochladen. dieser wird bei den Antworten des Users (Question-Page) dargestellt
 - **Such-Funktion**: Der User kann nach einem Search-Term über die Question-Liste filtern
 
