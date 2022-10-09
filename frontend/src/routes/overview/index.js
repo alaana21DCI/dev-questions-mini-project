@@ -1,8 +1,9 @@
 import * as React from "react";
 import "./index.scss";
+import Layout from "../../Layout";
 
 const Overview = () => {
-  return <h1>QQ</h1>;
+  return <Layout></Layout>;
 };
 
 export default Overview;

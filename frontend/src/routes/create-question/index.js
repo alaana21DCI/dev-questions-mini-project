@@ -1,8 +1,13 @@
 import * as React from "react";
 import "./index.scss";
+import Layout from "../../Layout";
 
 const CreateQuestion = () => {
-  return <h1>CreateQuestion</h1>;
+  return (
+    <Layout>
+      <h1>CreateQuestion</h1>
+    </Layout>
+  );
 };
 
 export default CreateQuestion;
