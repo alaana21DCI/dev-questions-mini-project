@@ -16,12 +16,12 @@
 
 ### Optional Features - 2
 
-- **Avatar**: Der User kann beim Erstellen des Accounts einen Avatar hochladen. dieser wird bei den Antworten des Users (Question-Page) dargestellt
+- **Avatar/Profilbild**: Der User kann beim Erstellen des Accounts einen Avatar hochladen. dieser wird bei den Antworten des Users (Question-Page) dargestellt
 - **Such-Funktion**: Der User kann nach einem Search-Term über die Question-Liste filtern
 
 ## Models
 
-![Model-Relations](images/ModelsRelation.png)
+![model-Relation](https://user-images.githubusercontent.com/81626271/194762669-4ff68ae1-96b9-4b8e-bd10-d7b9273575a1.png)
 
 ## Endpunkte
 
