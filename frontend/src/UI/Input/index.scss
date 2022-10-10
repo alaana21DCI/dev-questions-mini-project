@@ -1,0 +1,40 @@
+.control {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  width: 100%;
+  flex-wrap: wrap;
+
+  > label {
+    font-size: 14px;
+    flex: 1;
+    color: #333;
+    padding: 7px 8px;
+  }
+
+  > input {
+    flex: 3;
+    font: inherit;
+    padding: 7px 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    &:focus {
+      outline: none;
+      border-color: #da7735;
+      background: #fcddc6;
+    }
+    &:invalid {
+      border-color: red;
+      background: #fdfcfc4b;
+      color: red;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .control {
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+}
