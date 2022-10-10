@@ -1,17 +1,19 @@
 import "./index.scss";
 
-const Button = (props) => {
-  const classes = "button " + props.className;
+const Input = (props) => {
   return (
-    <button
-      type={props.type || "button"}
-      className={classes}
-      onClick={props.onClick}
-      disabled={props.disabled}
-    >
-      {props.children}
-    </button>
+    <div className="control">
+      <label htmlFor={props.id}>{props.label}</label>
+      <input
+        accept={props.accept}
+        type={props.type}
+        id={props.id}
+        value={props.value}
+        onChange={props.onChange}
+        placeholder={props.placeholder}
+      />
+    </div>
   );
 };
 
-export default Button;
+export default Input;
