@@ -13,18 +13,18 @@ exports.createNewQuestion = async (req, res, next) => {
 /** @type {import("express").RequestHandler} */
 exports.getQuestionById = async (req, res, next) => {
   const id = req.params.id;
-  const question = await Question.findById(id).populate(
-    "user",
-    "name profileImage"
-  ); //1- papulate name und avatar vom User weil im DB es gibt ref :id vom user
-  // .populate("answers", "user description"); //2- papulate user und description vom answers weil im DB es gibt ref :id vom user
-  // await Promise.all(
-  //   question.answers.map(async (answer) => {
-  //     await answer.populate("user", "name profileImage"); // 2
-  //   })
-  // );
+  //1- papulate name und avatar vom User weil im DB es gibt ref :id vom user
+  //2- papulate user und description vom answers weil im DB es gibt ref :id vom user
+  const question = await Question.findById(id)
+    .populate("user", "name profileImage")
+    .populate("answers", "user description");
+  await Promise.all(
+    question.answers.map(async (answer) => {
+      await answer.populate("user", "name profileImage");
+    })
+  );
   if (!question) {
-    const error = new Error("This Question-ID is undefined");
+    const error = new Error("This Question-ID is unknown");
     error.status = 400;
     return next(error);
   }

@@ -36,5 +36,79 @@
       }
       margin-bottom: 20px;
     }
+
+    > .answers-box {
+      width: 100%;
+      > .card {
+        width: 100%;
+        border: 1px dotted rgb(161, 185, 177);
+        padding: 10px 20px;
+        margin-bottom: 10px;
+        border-radius: 12px;
+
+        > .annotation {
+          > .user {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-style: italic;
+
+            > .image {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              > img {
+                border: 2px solid orange;
+                border-radius: 50%;
+              }
+
+              > h5 {
+                font-size: 14px;
+                margin: 0;
+                color: #333;
+              }
+            }
+            > span {
+              font-size: 12px;
+              font-weight: 400;
+              color: gray;
+              margin-left: 0;
+            }
+          }
+        }
+        > .description {
+          > p {
+            font-size: 12px;
+            font-family: monospace;
+            color: #333;
+          }
+        }
+      }
+    }
+
+    > .form-box {
+      > form {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        > h2 {
+          color: #333;
+          font-style: italic;
+        }
+        > textarea {
+          display: block;
+          width: 100%;
+          outline: none;
+          border-radius: 8px;
+          border-color: rgb(180, 156, 112);
+          padding: 7px 8px;
+          color: grey;
+          &:hover {
+            background-color: rgb(253, 197, 197);
+            color: #333;
+          }
+        }
+      }
+    }
   }
 }
