@@ -78,6 +78,22 @@ exports.getCurrentUser = async (req, res, next) => {
 
   return res.status(200).send(curUser);
 };
-exports.logout = (req, res, next) => {
-  throw new Error("not impliment!");
+/** @type {import("express").RequestHandler} */
+exports.logout = async (req, res, next) => {
+  const token = req.cookies["user-token"];
+
+  const user = await User.findOne().where("token").equals(token);
+
+  if (user) {
+    user.token = "";
+    await user.save();
+  }
+
+  res.cookie("user-token", "", {
+    maxAge: 1,
+    sameSite: "strict",
+    httpOnly: true,
+  });
+
+  res.status(200).send();
 };
