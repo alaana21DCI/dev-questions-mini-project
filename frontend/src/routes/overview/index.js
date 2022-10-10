@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Overview = () => {
   const [questions, setQuestions] = React.useState([]);
   const [category, setCategory] = React.useState("");
-
+  const [search, setSearch] = React.useState("");
   React.useEffect(() => {
     fetch(`http://localhost:3001/questions?category=${category}`).then(
       async (response) => {
@@ -19,7 +19,7 @@ const Overview = () => {
         }
       }
     );
-  }, [category]);
+  }, [category, search]);
 
   //console.log(questions);
   const categoryClickHandler = (selectedCategory) => {
@@ -33,7 +33,7 @@ const Overview = () => {
     <Layout>
       <div className="Overview">
         <div className="filters">
-          {/* <div className="control">
+          <div className="control">
             <input
               id="search"
               type="text"
@@ -41,7 +41,7 @@ const Overview = () => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
-          </div> */}
+          </div>
 
           <div className="categories">
             <Button
