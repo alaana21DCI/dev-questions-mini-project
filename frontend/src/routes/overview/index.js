@@ -16,7 +16,7 @@ const Overview = () => {
         setQuestions(result);
       }
     });
-  }, [questions]);
+  }, []);
 
   //console.log(questions);
 
@@ -56,7 +56,7 @@ const Overview = () => {
               to={"/questions/" + question._id}
             >
               <h4>{question.title}</h4>
-              {/* <p>{question.answers.length} Answers </p> */}
+              <p>{question.answers.length} Answers </p>
               <div className="profile">
                 {question.user.profileImage && (
                   <div>
