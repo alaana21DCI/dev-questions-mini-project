@@ -3,9 +3,9 @@ import "./index.scss";
 import useUser from "../../store/useUser";
 import { useNavigate } from "react-router-dom";
 import Input from "../../UI/Input";
-import Button from "../../UI/Button";
+//import Button from "../../UI/Button";
 
-export default function Login() {
+const Login = () => {
   const [showSignup, setShowSignup] = React.useState(false);
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -133,4 +133,5 @@ export default function Login() {
       </div>
     </div>
   );
-}
+};
+export default Login;

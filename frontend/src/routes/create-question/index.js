@@ -5,7 +5,7 @@ import Button from "../../UI/Button";
 import Layout from "../../Layout";
 import { useNavigate } from "react-router-dom";
 
-export default function CreateQuestion() {
+const CreateQuestion = () => {
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [category, setCategory] = React.useState("HTML");
@@ -106,4 +106,5 @@ export default function CreateQuestion() {
       </form>
     </Layout>
   );
-}
+};
+export default CreateQuestion;
