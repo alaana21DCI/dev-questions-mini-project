@@ -1,8 +1,8 @@
 const express = require("express");
 require("express-async-errors");
 
-const router = express.Router();
 const controller = require("../controllers/answersController");
+const router = express.Router();
 
 // -> /answers
 router.post("/", controller.createNewAnswer);

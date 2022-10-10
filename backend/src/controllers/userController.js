@@ -1,17 +1,13 @@
-/** @type {import("express").RequestHandler} */
-exports.createNewUser = async (req, res, next) => {
+exports.createNewUser = (req, res, next) => {
   throw new Error("not impliment!");
 };
-/** @type {import("express").RequestHandler} */
-exports.getCurrentUser = async (req, res, next) => {
+exports.getCurrentUser = (req, res, next) => {
   throw new Error("not impliment!");
 };
 
-/** @type {import("express").RequestHandler} */
-exports.login = async (req, res, next) => {
+exports.login = (req, res, next) => {
   throw new Error("not impliment!");
 };
-/** @type {import("express").RequestHandler} */
-exports.logout = async (req, res, next) => {
+exports.logout = (req, res, next) => {
   throw new Error("not impliment!");
 };

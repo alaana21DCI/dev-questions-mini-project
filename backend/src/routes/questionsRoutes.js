@@ -1,5 +1,5 @@
 const express = require("express");
-const controller = require("../controllers/questions");
+const controller = require("../controllers/questionsController");
 require("express-async-errors");
 const router = express.Router();
 
@@ -10,6 +10,6 @@ router
   .post(controller.createNewQuestion);
 
 // -> /questions/6307832565f17206daee5084
-router.get("/:id", controller.getOuestionById);
+router.get("/:id", controller.getQuestionById);
 
 module.exports = router;
