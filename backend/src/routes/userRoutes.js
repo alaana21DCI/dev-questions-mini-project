@@ -18,8 +18,11 @@ router.post(
   validator.signup,
   controller.createNewUser
 );
+
 // -> /user/login
 router.post("/login", validator.login, controller.login);
+
 // -> /user/logout
 router.post("/logout", controller.logout);
+
 module.exports = router;

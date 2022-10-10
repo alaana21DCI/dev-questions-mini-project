@@ -6,6 +6,7 @@ const Context = React.createContext({
   isFetching: false,
   signup: async () => 0,
   login: () => async () => 0,
+  logout: async () => {},
 });
 
 export function UserProvider(props) {
@@ -97,6 +98,15 @@ export function UserProvider(props) {
       setIsFetching(false);
 
       return response.status;
+    },
+    //// LOGOUT
+    logout: async () => {
+      await fetch("http://localhost:3001/user/logout", {
+        method: "POST",
+        credentials: "include",
+      });
+      // der User soll wieder zu State null zurücksetzen:
+      setUser(null);
     },
   };
 
