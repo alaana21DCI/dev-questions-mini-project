@@ -4,9 +4,8 @@ const Context = React.createContext({
   data: null,
   error: "",
   isFetching: false,
-  register: async () => 0,
+  signup: async () => 0,
   login: () => async () => 0,
-  logout: async () => {},
 });
 
 export function UserProvider(props) {
@@ -40,7 +39,7 @@ export function UserProvider(props) {
     isFetching: isFetching,
 
     //// REGISTER
-    register: async (body) => {
+    signup: async (body) => {
       setError("");
       setIsFetching(true);
 

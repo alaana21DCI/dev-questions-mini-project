@@ -12,13 +12,13 @@ const userSchema = mongoose.Schema({
 
 //Bei Rückgabe von Usern als JSON nur name und email zurückgeben.(papulaten)
 
-userSchema.methods.toJSON = function () {
-  const user = this;
-  const result = {
-    name: user.name,
-    email: user.email,
-    profileImage: user.profileImage,
-  };
-  return result;
-};
+// userSchema.methods.toJSON = function () {
+//   const user = this;
+//   const result = {
+//     name: user.name,
+//     email: user.email,
+//     profileImage: user.profileImage,
+//   };
+//   return result;
+// };
 module.exports = mongoose.model("User", userSchema, "users");
