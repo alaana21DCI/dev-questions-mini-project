@@ -17,6 +17,10 @@ app.use("/user", userRouter);
 app.use("/questions", questionsRouter);
 app.use("/answers", answersRouter);
 
+app.post("/drop-database", async (req, res, next) => {
+  await mongoose.connection.db.dropDatabase();
+  res.status(200).send("database dropt!");
+});
 app.use((req, res, next) => {
   const error = new Error(" ROUTE NOT FOUND !!");
   error.status = 404;
