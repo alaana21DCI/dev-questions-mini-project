@@ -30,8 +30,11 @@ exports.getQuestionById = async (req, res, next) => {
   }
   res.status(200).send(question);
 };
+
 // 3. getAllQuestions:
 /** @type {import("express").RequestHandler} */
-exports.getAllQuestions = (req, res, next) => {
-  throw new Error("not impliment!");
+exports.getAllQuestions = async (req, res, next) => {
+  const questions = await Question.find().populate("user", "name profileImage");
+
+  res.status(200).send(questions);
 };
