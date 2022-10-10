@@ -1,7 +1,12 @@
+const Question = require("../models/Question");
+
 // 1. createQuestion
 /** @type {import("express").RequestHandler} */
-exports.createNewQuestion = (req, res, next) => {
-  throw new Error("not impliment!");
+exports.createNewQuestion = async (req, res, next) => {
+  const question = new Question(req.body);
+  question.user = req.user._id;
+  await question.save();
+  res.status(200).send(question);
 };
 // 2. getAllQuestions:
 /** @type {import("express").RequestHandler} */

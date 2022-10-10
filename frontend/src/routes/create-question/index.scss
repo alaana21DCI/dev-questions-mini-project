@@ -1,0 +1,60 @@
+.CreateQuestion {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 8rem;
+  border: 4px double rgb(128, 73, 0);
+  border-radius: 20px;
+  padding: 20px 30px;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  > .control-textarea {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    font: inherit;
+    padding: 7px 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    > label {
+      padding: 10px 0;
+      font-size: 14px;
+      color: #333;
+    }
+
+    > textarea {
+      width: 100%;
+      border: none;
+      outline: none;
+    }
+  }
+
+  > .control {
+    > .button-list {
+      > button {
+        padding: 6px 12px;
+        border: 1px solid #fecc6e;
+        background: #fecc6e;
+        color: #f18b90;
+        cursor: pointer;
+
+        &.active {
+          background: black;
+          color: white;
+        }
+
+        &:hover {
+          background: black;
+          color: #f18b90;
+        }
+      }
+    }
+  }
+
+  > .error {
+    margin-top: 10px;
+    color: red;
+  }
+}
