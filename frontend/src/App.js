@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { UserProvider } from "./store/useUser";
 import OverviewRoute from "./routes/overview";
 import LoginRoute from "./routes/login";
 import AccountRoute from "./routes/account";
@@ -9,15 +9,17 @@ import CreateQuestionRoute from "./routes/create-question";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<OverviewRoute />} />
-        <Route path="/login" element={<LoginRoute />} />
-        <Route path="/account" element={<AccountRoute />} />
-        <Route path="/questions/:id" element={<QuestionRoute />} />{" "}
-        <Route path="/create-question" element={<CreateQuestionRoute />} />
-      </Routes>
-    </BrowserRouter>
+    <UserProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<OverviewRoute />} />
+          <Route path="/login" element={<LoginRoute />} />
+          <Route path="/account" element={<AccountRoute />} />
+          <Route path="/questions/:id" element={<QuestionRoute />} />{" "}
+          <Route path="/create-question" element={<CreateQuestionRoute />} />
+        </Routes>
+      </BrowserRouter>
+    </UserProvider>
   );
 }
 
