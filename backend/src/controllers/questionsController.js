@@ -34,7 +34,25 @@ exports.getQuestionById = async (req, res, next) => {
 // 3. getAllQuestions:
 /** @type {import("express").RequestHandler} */
 exports.getAllQuestions = async (req, res, next) => {
-  const questions = await Question.find().populate("user", "name profileImage");
+  const category = req.query.category;
+  const search = req.query.search;
+
+  let dbQuery = Question.find();
+
+  if (category) {
+    dbQuery = dbQuery.where("category").equals(category);
+  }
+  if (search) {
+    dbQuery = dbQuery.or([
+      {
+        title: { $regex: search, $options: "i" },
+      },
+      {
+        description: { $regex: search, $options: "i" },
+      },
+    ]);
+  }
+  const questions = await dbQuery.populate("user", "name profileImage");
 
   res.status(200).send(questions);
 };
