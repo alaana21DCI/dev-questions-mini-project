@@ -1,4 +1,3 @@
-import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import OverviewRoute from "./routes/overview";
 import LoginRoute from "./routes/login";
@@ -15,7 +14,7 @@ function App() {
           <Route path="/" element={<OverviewRoute />} />
           <Route path="/login" element={<LoginRoute />} />
           <Route path="/account" element={<AccountRoute />} />
-          <Route path="/questions/:id" element={<QuestionRoute />} />{" "}
+          <Route path="/questions/:id" element={<QuestionRoute />} />
           <Route path="/create-question" element={<CreateQuestionRoute />} />
         </Routes>
       </BrowserRouter>

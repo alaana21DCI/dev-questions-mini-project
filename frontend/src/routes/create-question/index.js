@@ -9,7 +9,6 @@ const CreateQuestion = () => {
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [category, setCategory] = React.useState("HTML");
-
   const [error, setError] = React.useState("");
   const [isFetching, setIsFetching] = React.useState(false);
 
@@ -17,7 +16,6 @@ const CreateQuestion = () => {
 
   const addQuestionHandler = async (event) => {
     event.preventDefault();
-
     setIsFetching(true);
 
     const response = await fetch("http://localhost:3001/questions", {

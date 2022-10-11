@@ -72,7 +72,12 @@ const Question = () => {
               <h1 className="title">{question.title}</h1>
               <span className="name">{question.user.name}</span>
             </div>
-            <div className="description">{question.description}</div>
+            <div className="description">
+              <strong>
+                <span>Q : </span>
+              </strong>
+              {question.description}
+            </div>
           </section>
 
           <section className="answers-box">
@@ -102,7 +107,7 @@ const Question = () => {
             ))}
           </section>
 
-          <section className="form-box">
+          <section className="answer-box">
             <form onSubmit={submitAnswerHandler}>
               <h2>My Answer:</h2>
               <textarea

@@ -15,8 +15,6 @@ export function UserProvider(props) {
   const [isFetching, setIsFetching] = React.useState(false);
   const [ready, setReady] = React.useState(false);
 
-  // wenn componente userProveider aufgerufen wird, wird diese effect hook gerendert um den user vom null state zu ändern (getCurrentUser) und mt setReady zu True wenn der status 200 und das erlaubt im Frontend alle children dieser provider zu zeigen und den user nicht null
-
   React.useEffect(() => {
     fetch("http://localhost:3001/user", {
       method: "GET",
@@ -33,13 +31,12 @@ export function UserProvider(props) {
       });
   }, []);
 
-  // unsere Context, die wir im value key im provider mitgeben:
   const data = {
     data: user,
     error: error,
     isFetching: isFetching,
 
-    //// REGISTER
+    //// Signup
     signup: async (body) => {
       setError("");
       setIsFetching(true);
@@ -71,7 +68,7 @@ export function UserProvider(props) {
       return response.status;
     },
 
-    //// LOGIN
+    //// Login
     login: async (body) => {
       setError("");
       setIsFetching(true);
@@ -99,7 +96,7 @@ export function UserProvider(props) {
 
       return response.status;
     },
-    //// LOGOUT
+    //// Logout
     logout: async () => {
       await fetch("http://localhost:3001/user/logout", {
         method: "POST",
@@ -109,7 +106,7 @@ export function UserProvider(props) {
       setUser(null);
     },
 
-    ///// UPDATE
+    //// Update
     update: async (body) => {
       setError("");
       setIsFetching(true);

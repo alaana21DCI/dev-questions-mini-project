@@ -9,6 +9,7 @@ const Overview = () => {
   const [questions, setQuestions] = React.useState([]);
   const [category, setCategory] = React.useState("");
   const [search, setSearch] = React.useState("");
+
   React.useEffect(() => {
     fetch(`http://localhost:3001/questions?category=${category}`).then(
       async (response) => {
@@ -29,6 +30,7 @@ const Overview = () => {
       setCategory(selectedCategory);
     }
   };
+
   return (
     <Layout>
       <div className="Overview">
@@ -66,7 +68,7 @@ const Overview = () => {
         </div>
 
         <section className="questions">
-          <h1>Q u e s t i o n s:</h1>
+          <h1> Dev Q u e s t i o n s:</h1>
           {questions.map((question) => (
             <Link
               className="question"
@@ -83,7 +85,7 @@ const Overview = () => {
                       src={question.user.profileImage}
                       width="24"
                       height="24"
-                      alt="Profilbild"
+                      alt="profileImage"
                     />
                     <h5>&nbsp;{question.user.name}</h5>
                   </div>

@@ -5,7 +5,9 @@
   > .wrapper {
     width: 100%;
     margin: 0 auto;
-
+    > section {
+      margin-top: 46px;
+    }
     > .question-box {
       max-width: 800px;
       margin: 0 auto;
@@ -16,7 +18,8 @@
       > .head {
         display: flex;
         align-items: baseline;
-        gap: 12px;
+        gap: 10px;
+        flex-wrap: wrap;
 
         > .title {
           border-bottom: 1px solid gray;
@@ -85,14 +88,16 @@
       }
     }
 
-    > .form-box {
+    > .answer-box {
       > form {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        padding: 10px 0;
+        gap: 10px;
         > h2 {
           color: #333;
           font-style: italic;
+          text-align: center;
         }
         > textarea {
           display: block;

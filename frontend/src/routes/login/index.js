@@ -12,7 +12,6 @@ const Login = () => {
   const [password, setPassword] = React.useState("");
   // Bei der Registrirung soll der User optinal ein Profilbild hochladen können.
   const [profilePic, setProfilePic] = React.useState();
-
   const user = useUser();
   const navigate = useNavigate();
 
@@ -50,12 +49,12 @@ const Login = () => {
         <div className="wrapper">
           <form onSubmit={signUpHandler} className="form-box">
             <div className="head">
-              <h1>Join Us!</h1>
+              <h1>Join Us Now!</h1>
               <div
                 className="toggle-register"
                 onClick={() => setShowSignup(false)}
               >
-                ALready have an account!
+                I have Already an account!
               </div>
             </div>
             <Input
@@ -80,8 +79,8 @@ const Login = () => {
               onChange={(e) => setName(e.target.value)}
             />
             <Input
-              id="profilbild"
-              label="Profilbild"
+              id="profileImage"
+              label="profileImage"
               type="file"
               accept="image/*"
               onChange={(e) => setProfilePic(e.target.files[0])}

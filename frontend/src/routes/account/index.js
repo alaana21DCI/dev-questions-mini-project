@@ -39,7 +39,7 @@ const Account = () => {
     <Layout>
       <div className="Account">
         <div className="title">
-          <span>Wellcom back {user.data.name} !</span>
+          <span> Wellcom back {user.data.name} ......</span>
           <Button onClick={logoutHandler}>Logout</Button>
         </div>
 
