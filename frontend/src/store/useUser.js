@@ -108,6 +108,36 @@ export function UserProvider(props) {
       // der User soll wieder zu State null zurücksetzen:
       setUser(null);
     },
+
+    ///// UPDATE
+    update: async (body) => {
+      setError("");
+      setIsFetching(true);
+
+      const formData = new FormData();
+      formData.append("name", body.name);
+      formData.append("file", body.profilePic);
+
+      const response = await fetch("http://localhost:3001/user", {
+        method: "PATCH",
+        credentials: "include",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (response.status === 200) {
+        setUser(result);
+      } else if (result.errors) {
+        setError(result.errors[0].msg);
+      } else if (result.error) {
+        setError(result.error);
+      }
+
+      setIsFetching(false);
+
+      return response.status;
+    },
   };
 
   return (

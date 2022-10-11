@@ -13,3 +13,8 @@ exports.login = [
   body("password").isLength({ min: 4 }).withMessage("invalid Password!"),
   validator,
 ];
+
+exports.update = [
+  body("name").exists().trim().withMessage("Input Field couldn't be empty"),
+  validator,
+];

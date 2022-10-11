@@ -5,7 +5,7 @@ import Layout from "../../Layout";
 import Button from "../../UI/Button";
 import { useParams } from "react-router-dom";
 
-export default function Question() {
+const Question = () => {
   const params = useParams();
 
   const [question, setQuestion] = React.useState(null);
@@ -64,8 +64,6 @@ export default function Question() {
   }
 
   return (
-    // 4. Bei den Antworten soll das Profilbild angezeigt werden falls es vorhanen ist.
-    // dazu brauchen den profileImage field auf user im Backend user sowie auf antwort  zu papulaten im questionsController
     <Layout>
       <div className="QuestionId">
         <div className="wrapper">
@@ -82,16 +80,19 @@ export default function Question() {
               <div key={answer._id} className="card">
                 <div className="annotation">
                   <div className="user">
-                    <div className="image">
-                      <img
-                        src={answer.user.profileImage}
-                        width="34"
-                        height="34"
-                        alt=""
-                      />
-                      <h5>{answer.user.name}</h5>
-                    </div>
-                    <span>has answered:</span>
+                    {answer.user.profileImage && (
+                      <div className="image">
+                        <img
+                          src={answer.user.profileImage}
+                          width="34"
+                          height="34"
+                          alt=""
+                        />
+                      </div>
+                    )}
+
+                    <h5>{answer.user.name}</h5>
+                    <p>has answered:</p>
                   </div>
                 </div>
                 <div className="description">
@@ -116,4 +117,5 @@ export default function Question() {
       </div>
     </Layout>
   );
-}
+};
+export default Question;

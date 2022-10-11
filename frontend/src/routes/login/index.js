@@ -50,12 +50,12 @@ const Login = () => {
         <div className="wrapper">
           <form onSubmit={signUpHandler} className="form-box">
             <div className="head">
-              <h1>Register Formular</h1>
+              <h1>Join Us!</h1>
               <div
                 className="toggle-register"
                 onClick={() => setShowSignup(false)}
               >
-                Ich habe bereits einen Account!
+                ALready have an account!
               </div>
             </div>
             <Input
@@ -103,12 +103,12 @@ const Login = () => {
       <div className="wrapper">
         <form onSubmit={loginHandler} className="form-box">
           <div className="head">
-            <h1>Login Formular </h1>
+            <h1>Login</h1>
             <div
               className="toggle-register"
               onClick={() => setShowSignup(true)}
             >
-              Ich habe noch keinen Account!
+              I do'nt have an Account!{" "}
             </div>
           </div>
           <Input
