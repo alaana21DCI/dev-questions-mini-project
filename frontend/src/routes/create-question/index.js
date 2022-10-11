@@ -67,7 +67,7 @@ const CreateQuestion = () => {
         />
 
         <div className="control-textarea">
-          <label>Beschreibung:</label>
+          <label>Description:</label>
           <textarea
             rows={10}
             value={description}
@@ -76,7 +76,7 @@ const CreateQuestion = () => {
         </div>
 
         <div className="control">
-          <label>Ktegorie:</label>
+          <label>Category:</label>
           <div className="button-list">
             <Button
               className={category === "JS" ? "active" : ""}

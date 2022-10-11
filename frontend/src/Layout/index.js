@@ -18,7 +18,7 @@ const Layout = (props) => {
             <BiUser size={30} color="#fddabf" />
           </Link>
           <Link to="/create-question" className="create-question-link ">
-            Create A Question
+            Add A Question
           </Link>
         </nav>
       </header>

@@ -66,7 +66,7 @@ const Overview = () => {
         </div>
 
         <section className="questions">
-          <h1>Fragen:</h1>
+          <h1>Q u e s t i o n s:</h1>
           {questions.map((question) => (
             <Link
               className="question"
@@ -74,7 +74,7 @@ const Overview = () => {
               to={"/questions/" + question._id}
             >
               <h4>{question.title}</h4>
-              <p>{question.answers.length} Antworten </p>
+              <p>{question.answers.length} Answers </p>
               <div className="profile">
                 {question.user.profileImage && (
                   <div>
