@@ -1,56 +1,54 @@
 .Account {
   width: 100%;
   margin: 0 auto;
-  .greeting-box {
-    max-width: 1000px;
+
+  .avatar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .profileImage {
+      border-radius: 50%;
+      border: 3px double rgb(212, 53, 53);
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+  .update-box {
     margin: 0 auto;
+    max-width: 1000px;
     background: rgba(172, 230, 158, 0.575);
     margin-top: 8rem;
     border: 4px double rgb(199, 138, 58);
-    border-radius: 20px;
-    > .title {
+
+    .greeting {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 0;
       margin-bottom: 20px;
     }
-    > .update-form {
+
+    .update-form {
       background: #fff;
       border: 1px solid fff;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.26);
       padding: 1rem 2rem;
-
       display: flex;
       gap: 15px;
       flex-direction: column;
       flex-wrap: wrap;
 
-      > .error {
+      .error {
         padding: 0.5rem;
         margin-top: 5px;
         color: red;
       }
 
-      > .success {
+      .success {
         margin-top: 5px;
         color: green;
       }
-    }
-  }
-
-  > .avatar {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    > .profileImage {
-      border-radius: 50%;
-      border-color: rgb(212, 53, 53);
-      border-width: 1px;
-      border-style: solid;
-      width: 3rem;
-      height: 3rem;
     }
   }
 }

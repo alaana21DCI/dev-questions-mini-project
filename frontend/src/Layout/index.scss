@@ -3,10 +3,10 @@
   min-height: 100vh;
   margin: 0 auto;
 
-  > .main-header {
+  .main-header {
     background: #fddabf;
     padding: 2rem 3rem;
-    > .nav {
+    .nav {
       width: 100%;
       height: 100%;
       display: flex;
@@ -14,12 +14,12 @@
       gap: 0.5rem;
       align-items: center;
       justify-content: space-between;
-      > .link {
+      .link {
         text-decoration: none;
 
         color: inherit;
       }
-      > .logo {
+      .logo {
         font-size: 1.5rem;
         color: rgb(90 125 148);
         font-weight: 700;
@@ -28,7 +28,7 @@
         flex-shrink: 0;
       }
 
-      > .account {
+      .account {
         width: 30px;
         height: 30px;
 
@@ -49,7 +49,7 @@
         }
       }
 
-      > .create-question {
+      .create-question {
         font: inherit;
         background: #fddabf;
         border: 1px solid #fddabf;

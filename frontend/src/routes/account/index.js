@@ -6,6 +6,7 @@ import Input from "../../UI/Input";
 import useUser from "../../store/useUser";
 import { useNavigate } from "react-router-dom";
 import Card from "../../UI/Card";
+
 const Account = () => {
   const user = useUser();
   const navigate = useNavigate();
@@ -48,8 +49,8 @@ const Account = () => {
           <h2>{user.data.name}</h2>
         </div>
 
-        <Card className="greeting-box">
-          <div className="title">
+        <Card className="update-box">
+          <div className="greeting">
             <span>
               Wellcom back <strong>{user.data.name}</strong>
             </span>
