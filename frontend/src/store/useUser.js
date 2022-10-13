@@ -96,13 +96,13 @@ export function UserProvider(props) {
 
       return response.status;
     },
+    
     //// Logout
     logout: async () => {
       await fetch("http://localhost:3001/user/logout", {
         method: "POST",
         credentials: "include",
       });
-      // der User soll wieder zu State null zurücksetzen:
       setUser(null);
     },
 

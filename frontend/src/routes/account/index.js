@@ -5,13 +5,12 @@ import Button from "../../UI/Button";
 import Input from "../../UI/Input";
 import useUser from "../../store/useUser";
 import { useNavigate } from "react-router-dom";
-
+import Card from "../../UI/Card";
 const Account = () => {
   const user = useUser();
   const navigate = useNavigate();
   const [name, setName] = React.useState(user.data.name);
   const [profilePic, setProfilePic] = React.useState("");
-  // wenn die Update success war zeig das:
   const [showSuccess, setShowSuccess] = React.useState(false);
 
   const logoutHandler = async () => {
@@ -38,34 +37,49 @@ const Account = () => {
   return (
     <Layout>
       <div className="Account">
-        <div className="title">
-          <span> Wellcom back {user.data.name} ......</span>
-          <Button onClick={logoutHandler}>Logout</Button>
+        <div className="avatar">
+          {user.data.profileImage && (
+            <img
+              className="profileImage"
+              src={user.data.profileImage}
+              alt="profileImage"
+            />
+          )}
+          <h2>{user.data.name}</h2>
         </div>
 
-        <form className="update-box" onSubmit={updateHandler}>
-          <Input
-            label="Name"
-            type="text"
-            placeholder="Name..."
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
+        <Card className="greeting-box">
+          <div className="title">
+            <span>
+              Wellcom back <strong>{user.data.name}</strong>
+            </span>
+            <Button onClick={logoutHandler}>Logout</Button>
+          </div>
 
-          <Input
-            label="ProfileImage"
-            type="file"
-            accept="image/*"
-            placeholder="ProfileImage..."
-            onChange={(e) => setProfilePic(e.target.files[0])}
-          />
+          <form className="update-form" onSubmit={updateHandler}>
+            <Input
+              label="Name"
+              type="text"
+              placeholder="Name..."
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
 
-          <Button type="submit">
-            {user.isFetching ? "Fetching..." : "Update"}
-          </Button>
-          {user.error && <div className="error">{user.error}</div>}
-          {showSuccess && <div className="success"> Update was success!</div>}
-        </form>
+            <Input
+              label="ProfileImage"
+              type="file"
+              accept="image/*"
+              placeholder="ProfileImage..."
+              onChange={(e) => setProfilePic(e.target.files[0])}
+            />
+
+            <Button type="submit">
+              {user.isFetching ? "Fetching..." : "Update"}
+            </Button>
+            {user.error && <div className="error">{user.error}</div>}
+            {showSuccess && <div className="success"> Update was success!</div>}
+          </form>
+        </Card>
       </div>
     </Layout>
   );

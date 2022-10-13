@@ -1,116 +1,61 @@
 .QuestionId {
-  max-width: 1000px;
+  width: 100%;
   margin: 0 auto;
-  margin-top: 1rem;
-  > .wrapper {
-    width: 100%;
-    margin: 0 auto;
-    > section {
-      margin-top: 46px;
-    }
-    > .question-box {
-      max-width: 800px;
-      margin: 0 auto;
 
-      border: 4px double rgb(250, 197, 197);
-      padding: 20px 30px;
+  .question-box {
+    max-width: 800px;
+    border: 4px double rgb(250, 197, 197);
+    padding: 12px 20px;
+    border-radius: 0;
+    margin: 3rem auto;
 
-      > .head {
-        display: flex;
-        align-items: baseline;
-        gap: 10px;
-        flex-wrap: wrap;
+    .head {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
 
-        > .title {
-          border-bottom: 1px solid gray;
-          font-family: monospace;
-          margin: 0;
-          margin-bottom: 10px;
-          color: #333;
-        }
-        > .name {
-          margin: 0;
-          font-size: 20px;
-          color: rgb(153, 172, 202);
-        }
-      }
-      > .description {
-        padding: 10px 0;
-      }
-      margin-bottom: 20px;
-    }
-
-    > .answers-box {
-      width: 100%;
-      > .card {
-        width: 100%;
-        border: 1px dotted rgb(161, 185, 177);
-        padding: 10px 20px;
+      .title {
+        border-bottom: 1px solid gray;
+        font-family: monospace;
+        margin: 0;
         margin-bottom: 10px;
-        border-radius: 12px;
-
-        > .annotation {
-          > .user {
-            display: flex;
-            align-items: center;
-            font-style: italic;
-            gap: 5px;
-            flex-wrap: wrap;
-            > .image {
-              display: flex;
-              align-items: center;
-              gap: 20px;
-              > img {
-                border: 2px solid orange;
-                border-radius: 50%;
-              }
-            }
-            > h5 {
-              font-size: 14px;
-              margin: 0;
-              color: #333;
-            }
-            > p {
-              font-size: 12px;
-              font-weight: 400;
-              color: gray;
-              margin-left: auto;
-            }
-          }
-        }
-        > .description {
-          > p {
-            font-size: 12px;
-            font-family: monospace;
-            color: #333;
-          }
-        }
+        color: #333;
+      }
+      .name {
+        margin: 0;
+        font-size: 18px;
+        color: rgb(153, 172, 202);
       }
     }
+  }
 
-    > .answer-box {
-      > form {
-        display: flex;
-        flex-direction: column;
-        padding: 10px 0;
-        gap: 10px;
-        > h2 {
+  .answers-box,
+  .answer-box {
+    max-width: 1200px;
+  }
+  .answer-box {
+    form {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 0;
+      gap: 10px;
+      h2 {
+        color: #333;
+        font-style: italic;
+        text-align: center;
+      }
+      textarea {
+        display: block;
+        width: 100%;
+        outline: none;
+        border-radius: 8px;
+        border-color: rgb(180, 156, 112);
+        padding: 7px 8px;
+        color: grey;
+        &:hover {
+          background-color: rgb(253, 197, 197);
           color: #333;
-          font-style: italic;
-          text-align: center;
-        }
-        > textarea {
-          display: block;
-          width: 100%;
-          outline: none;
-          border-radius: 8px;
-          border-color: rgb(180, 156, 112);
-          padding: 7px 8px;
-          color: grey;
-          &:hover {
-            background-color: rgb(253, 197, 197);
-            color: #333;
-          }
         }
       }
     }

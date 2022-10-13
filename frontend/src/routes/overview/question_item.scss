@@ -1,0 +1,32 @@
+.question_item {
+  > .head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0.7rem;
+
+    > h4 {
+      font-style: italic;
+      color: #333;
+      font-weight: 400;
+      font-size: 14px;
+      margin-right: auto;
+      flex-shrink: 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px dotted #924823;
+      margin: 0;
+    }
+
+    > .count {
+      font-size: 12px;
+
+      > span:nth-child(2) {
+        color: rgb(229 130 71 / 74%);
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}

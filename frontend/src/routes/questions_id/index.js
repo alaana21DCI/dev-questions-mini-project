@@ -1,13 +1,14 @@
 import * as React from "react";
 import "./index.scss";
 
+import Answer from "./answer";
 import Layout from "../../Layout";
 import Button from "../../UI/Button";
 import { useParams } from "react-router-dom";
+import Card from "../../UI/Card";
 
 const Question = () => {
   const params = useParams();
-
   const [question, setQuestion] = React.useState(null);
   const [answer, setAnswer] = React.useState("");
 
@@ -66,59 +67,34 @@ const Question = () => {
   return (
     <Layout>
       <div className="QuestionId">
-        <div className="wrapper">
-          <section className="question-box">
-            <div className="head">
-              <h1 className="title">{question.title}</h1>
-              <span className="name">{question.user.name}</span>
-            </div>
-            <div className="description">
-              <strong>
-                <span>Q : </span>
-              </strong>
-              {question.description}
-            </div>
-          </section>
+        <Card className="question-box">
+          <div className="head">
+            <h1 className="title">{question.title}</h1>
 
-          <section className="answers-box">
-            {question.answers.map((answer) => (
-              <div key={answer._id} className="card">
-                <div className="annotation">
-                  <div className="user">
-                    {answer.user.profileImage && (
-                      <div className="image">
-                        <img
-                          src={answer.user.profileImage}
-                          width="34"
-                          height="34"
-                          alt=""
-                        />
-                      </div>
-                    )}
+            <span className="name">{question.user.name}</span>
+          </div>
+          <div className="description">
+            <p>{question.description}</p>
+          </div>
+        </Card>
 
-                    <h5>{answer.user.name}</h5>
-                    <p>has answered:</p>
-                  </div>
-                </div>
-                <div className="description">
-                  <p> {answer.description}</p>
-                </div>
-              </div>
-            ))}
-          </section>
+        <section className="answers-box">
+          {question.answers.map((answer) => (
+            <Answer answer={answer} key={answer._id}></Answer>
+          ))}
+        </section>
 
-          <section className="answer-box">
-            <form onSubmit={submitAnswerHandler}>
-              <h2>My Answer:</h2>
-              <textarea
-                rows={5}
-                value={answer}
-                onChange={(e) => setAnswer(e.target.value)}
-              ></textarea>
-              <Button type="submit">Submit</Button>
-            </form>
-          </section>
-        </div>
+        <section className="answer-box">
+          <form onSubmit={submitAnswerHandler}>
+            <h2>My Answer:</h2>
+            <textarea
+              rows={5}
+              value={answer}
+              onChange={(e) => setAnswer(e.target.value)}
+            ></textarea>
+            <Button type="submit">Submit</Button>
+          </form>
+        </section>
       </div>
     </Layout>
   );

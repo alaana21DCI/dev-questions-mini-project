@@ -80,19 +80,19 @@ const CreateQuestion = () => {
               className={category === "JS" ? "active" : ""}
               onClick={categorySubmitHandler("JS")}
             >
-              JS
+              J S
             </Button>
             <Button
               className={category === "HTML" ? "active" : ""}
               onClick={categorySubmitHandler("HTML")}
             >
-              HTML
+              H T M L
             </Button>
             <Button
               className={category === "CSS" ? "active" : ""}
               onClick={categorySubmitHandler("CSS")}
             >
-              CSS
+              C S S
             </Button>
           </div>
         </div>

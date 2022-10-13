@@ -3,14 +3,12 @@ import "./index.scss";
 import useUser from "../../store/useUser";
 import { useNavigate } from "react-router-dom";
 import Input from "../../UI/Input";
-//import Button from "../../UI/Button";
 
 const Login = () => {
   const [showSignup, setShowSignup] = React.useState(false);
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  // Bei der Registrirung soll der User optinal ein Profilbild hochladen können.
   const [profilePic, setProfilePic] = React.useState();
   const user = useUser();
   const navigate = useNavigate();
@@ -43,7 +41,6 @@ const Login = () => {
     }
   };
   if (showSignup) {
-    // Registierung-Formular
     return (
       <div className="Login">
         <div className="wrapper">
@@ -107,7 +104,7 @@ const Login = () => {
               className="toggle-register"
               onClick={() => setShowSignup(true)}
             >
-              I do'nt have an Account!{" "}
+              I don't have an Account!
             </div>
           </div>
           <Input

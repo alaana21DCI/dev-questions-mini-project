@@ -1,0 +1,47 @@
+.card {
+  border: 1px solid #ceae8c;
+  background: white;
+  border-radius: 22px;
+  padding: 1rem;
+
+  &:hover {
+    background-color: #fecc6e;
+    color: black;
+  }
+  > .annotation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    > .avatar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      > a {
+        > .profileImage {
+          border-radius: 50%;
+          border-color: rgb(212, 53, 53);
+          border-width: 1px;
+          border-style: solid;
+          width: 1.8rem;
+          height: 1.8rem;
+          cursor: pointer;
+        }
+      }
+
+      > h5 {
+        margin: 0;
+      }
+    }
+  }
+  .description {
+    p {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      &:hover {
+        overflow: visible;
+      }
+    }
+  }
+}

@@ -2,8 +2,8 @@ import * as React from "react";
 import "./index.scss";
 
 import Layout from "../../Layout";
-import Button from "../../UI/Button/";
-import { Link } from "react-router-dom";
+import Button from "../../UI/Button";
+import Question from "./question_item";
 
 const Overview = () => {
   const [questions, setQuestions] = React.useState([]);
@@ -22,7 +22,6 @@ const Overview = () => {
     );
   }, [category, search]);
 
-  //console.log(questions);
   const categoryClickHandler = (selectedCategory) => {
     if (selectedCategory === category) {
       setCategory("");
@@ -34,8 +33,8 @@ const Overview = () => {
   return (
     <Layout>
       <div className="Overview">
-        <div className="filters">
-          <div className="control">
+        <div className="filters-bar-fixed">
+          <div className="control search">
             <input
               id="search"
               type="text"
@@ -45,53 +44,32 @@ const Overview = () => {
             />
           </div>
 
-          <div className="categories">
+          <div className="categories-box">
             <Button
               className={category === "JS" ? "active" : ""}
               onClick={() => categoryClickHandler("JS")}
             >
-              JS
+              J S
             </Button>
             <Button
               className={category === "HTML" ? "active" : ""}
               onClick={() => categoryClickHandler("HTML")}
             >
-              HTML
+              H T M L
             </Button>
             <Button
               className={category === "CSS" ? "active" : ""}
               onClick={() => categoryClickHandler("CSS")}
             >
-              CSS
+              C S S
             </Button>
           </div>
         </div>
 
         <section className="questions">
-          <h1> Dev Q u e s t i o n s:</h1>
+          <h1> Q u e s t i o n s:</h1>
           {questions.map((question) => (
-            <Link
-              className="question"
-              key={question._id}
-              to={"/questions/" + question._id}
-            >
-              <h4>{question.title}</h4>
-              <p>{question.answers.length} Answers </p>
-              <div className="profile">
-                {question.user.profileImage && (
-                  <div>
-                    <img
-                      className="profileImage"
-                      src={question.user.profileImage}
-                      width="24"
-                      height="24"
-                      alt="profileImage"
-                    />
-                    <h5>&nbsp;{question.user.name}</h5>
-                  </div>
-                )}
-              </div>
-            </Link>
+            <Question key={question._id} question={question}></Question>
           ))}
         </section>
       </div>
