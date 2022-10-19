@@ -1,6 +1,5 @@
 import * as React from "react";
 import "./index.scss";
-
 import Answer from "./answer";
 import Layout from "../../Layout";
 import Button from "../../UI/Button";
@@ -11,6 +10,7 @@ const Question = () => {
   const params = useParams();
   const [question, setQuestion] = React.useState(null);
   const [answer, setAnswer] = React.useState("");
+  const [isFetching, setIsFetching] = React.useState(false);
 
   React.useEffect(() => {
     fetch("http://localhost:3001/questions/" + params.id, {
@@ -27,6 +27,7 @@ const Question = () => {
 
   const submitAnswerHandler = async (event) => {
     event.preventDefault();
+    setIsFetching(true);
 
     const response = await fetch("http://localhost:3001/answers", {
       method: "POST",
@@ -39,9 +40,11 @@ const Question = () => {
         question: question._id,
       }),
     });
+    setIsFetching(false);
 
     if (response.status === 200) {
       setAnswer("");
+
       // refetch questions
       fetch("http://localhost:3001/questions/" + params.id, {
         method: "GET",
@@ -92,7 +95,10 @@ const Question = () => {
               value={answer}
               onChange={(e) => setAnswer(e.target.value)}
             ></textarea>
-            <Button type="submit">Submit</Button>
+            <Button type="submit">
+              {" "}
+              {isFetching ? "Fetching..." : "Submit"}
+            </Button>
           </form>
         </section>
       </div>

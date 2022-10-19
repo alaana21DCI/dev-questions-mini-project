@@ -1,6 +1,9 @@
+import * as React from "react";
+
 import Card from "../../UI/Card";
 const Answer = (props) => {
   const answer = props.answer;
+
   return (
     <Card key={answer._id} className="answer_item">
       <div className="annotation">
