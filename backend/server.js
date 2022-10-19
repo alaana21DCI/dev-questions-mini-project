@@ -10,7 +10,7 @@ const answersRouter = require("./src/routes/answresRoutes");
 
 const { DB_URL, DB_PORT, DB_NAME, PORT } = process.env;
 
-// mongoose.connect(`mongodb://${DB_URL}:${DB_PORT}/${DB_NAME}`);
+mongoose.connect(`mongodb://${DB_URL}:${DB_PORT}/${DB_NAME}`);
 mongoose.connect(DB_URL).catch((err) => {
   console.log(err);
 });
