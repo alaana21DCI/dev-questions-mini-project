@@ -16,7 +16,7 @@ export function UserProvider(props) {
   const [ready, setReady] = React.useState(false);
 
   React.useEffect(() => {
-    fetch("http://localhost:3001/user", {
+    fetch("/user", {
       method: "GET",
       credentials: "include",
     })
@@ -47,7 +47,7 @@ export function UserProvider(props) {
       formData.append("password", body.password);
       formData.append("file", body.profilePic);
 
-      const response = await fetch("http://localhost:3001/user/signup", {
+      const response = await fetch("/user/signup", {
         method: "POST",
         credentials: "include",
         body: formData,
@@ -73,7 +73,7 @@ export function UserProvider(props) {
       setError("");
       setIsFetching(true);
 
-      const response = await fetch("http://localhost:3001/user/login", {
+      const response = await fetch("/user/login", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -99,7 +99,7 @@ export function UserProvider(props) {
     
     //// Logout
     logout: async () => {
-      await fetch("http://localhost:3001/user/logout", {
+      await fetch("/user/logout", {
         method: "POST",
         credentials: "include",
       });
@@ -115,7 +115,7 @@ export function UserProvider(props) {
       formData.append("name", body.name);
       formData.append("file", body.profilePic);
 
-      const response = await fetch("http://localhost:3001/user", {
+      const response = await fetch("/user", {
         method: "PATCH",
         credentials: "include",
         body: formData,

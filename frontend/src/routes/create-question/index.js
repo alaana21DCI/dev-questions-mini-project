@@ -18,7 +18,7 @@ const CreateQuestion = () => {
     event.preventDefault();
     setIsFetching(true);
 
-    const response = await fetch("http://localhost:3001/questions", {
+    const response = await fetch("/questions", {
       method: "POST",
       credentials: "include",
       headers: {

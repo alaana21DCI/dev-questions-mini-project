@@ -11,7 +11,7 @@ const Overview = () => {
   const [search, setSearch] = React.useState("");
 
   React.useEffect(() => {
-    fetch(`http://localhost:3001/questions?category=${category}`).then(
+    fetch(`/questions?category=${category}`).then(
       async (response) => {
         const result = await response.json();
 

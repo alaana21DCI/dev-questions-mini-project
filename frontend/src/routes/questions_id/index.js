@@ -13,7 +13,7 @@ const Question = () => {
   const [isFetching, setIsFetching] = React.useState(false);
 
   React.useEffect(() => {
-    fetch("http://localhost:3001/questions/" + params.id, {
+    fetch("/questions/" + params.id, {
       method: "GET",
       credentials: "include",
     }).then(async (response) => {
@@ -29,7 +29,7 @@ const Question = () => {
     event.preventDefault();
     setIsFetching(true);
 
-    const response = await fetch("http://localhost:3001/answers", {
+    const response = await fetch("/answers", {
       method: "POST",
       credentials: "include",
       headers: {
@@ -46,7 +46,7 @@ const Question = () => {
       setAnswer("");
 
       // refetch questions
-      fetch("http://localhost:3001/questions/" + params.id, {
+      fetch("/questions/" + params.id, {
         method: "GET",
         credentials: "include",
       }).then(async (response) => {
